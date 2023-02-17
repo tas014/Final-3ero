@@ -4,8 +4,6 @@ import GetProfile from '../components/Containers/GetProfile';
 
 export default function Home() {
 
- 
-
   return (
       <DocWrapper title='CVP Home'>
         <GetProfile>

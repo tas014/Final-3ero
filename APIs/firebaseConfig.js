@@ -4,7 +4,7 @@ import { getAuth } from 'firebase/auth';
 import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: process.env.CVP_FIREBASE_KEY,
+  apiKey: process.env.NEXT_PUBLIC_CVP_FIREBASE_KEY,
   authDomain: "community-gaming-platform.firebaseapp.com",
   projectId: "community-gaming-platform",
   storageBucket: "community-gaming-platform.appspot.com",
