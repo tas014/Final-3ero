@@ -1,0 +1,1089 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* General Variables */
+
+:root {
+    --darkest: #0B214B;
+    --darker: #1050CC;
+    --normal: #3A6CCC;
+    --light: #6286CC;
+    --lightest: #899EC9;
+    --white: #efefef;
+    --black: #141414;
+    --red: rgb(222, 39, 39);
+    --aqua: rgb(15, 187, 156);
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'lora';
+    src: url('./fonts/lora/Lora-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lora';
+    src: url('./fonts/lora/Lora-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lora';
+    src: url('./fonts/lora/Lora-Italic.woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('./fonts/Inter/Inter-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('./fonts/Inter/Inter-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url('./fonts/Inter/Inter-Light.woff2');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+h1, h2, h3, .lora {
+    font-family: 'lora', serif
+}
+
+p, span, button, div, label, input, a, .inter {
+    font-family: 'inter', sans-serif;
+}
+
+/* General classes and styles */
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+button {
+    border:none;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+button[disabled]{
+    background-color: whitesmoke;
+    color:gray
+}
+
+.marginv {
+    margin-bottom: 5em;
+}
+
+.extend {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-flow: column wrap;
+}
+
+.nodisplay {
+    display: none;
+}
+
+.success {
+    color: rgb(31, 206, 31);
+}
+
+.error {
+    color: rgb(161, 18, 18);
+}
+
+form {
+    flex-flow: column wrap;
+}
+
+.fieldError  {
+    color: rgb(164, 34, 34);
+}
+
+.flexcenter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header, header > div, header nav, .gamesContainer, form {
+    display: flex;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+p {
+    line-height: 1.3em;
+}
+
+@media only screen and (max-width: 1920px) {
+    body {
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    body {
+        font-size: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    body {
+        font-size: 1rem;
+    }
+}
+
+
+/* main */
+
+main {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--white);
+}
+
+main:not(.logService) {
+    padding: 5em 0px
+}
+
+/* Header */
+
+header {
+    background-color: var(--darkest);
+    display: flex;
+    justify-content: flex-end;
+}
+
+header > div {
+    width:55%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--white)
+}
+
+header nav {
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+}
+
+header a {
+    text-decoration: none;
+    color:inherit;
+    display: inline-block;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+header a div {
+    padding: 0em 2em;
+}
+
+nav a div {
+    height: 100%;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+strong {
+    font-weight: bold;
+}
+
+header a:hover, .navSelected {
+    background-color: var(--white);
+    color: var(--darkest);
+}
+
+.headerPfp {
+    width: 4em;
+    height: 4em;
+}
+
+header h1 {
+    padding: 1em 0em;
+}
+
+@media only screen and (max-width: 1000px) {
+    header > div {
+        width: 90%;
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    header h1 {
+        display: none;
+    }
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--darkest);
+    color: var(--white);
+    min-height: 30vh;
+    font-size: 2rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    footer {
+        font-size: 1rem;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer > div {
+        width: 90%;
+    }
+}
+
+/* Landing */
+
+.gamesContainer {
+    justify-content: center;
+    padding-top:1.5em;
+    box-sizing: border-box;
+}
+
+.gamesContainer > div {
+    flex-flow: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding:1.5em;
+    background-color: rgba(127, 160, 238, 0.2);
+    min-width: 100%;
+    min-height: 80vh;
+    box-shadow: 1px 5px 5px 10px gray;
+}
+
+.gamesContainer > div a {
+    display: inline-block;
+    width: 32%;
+}
+
+.gameCard {
+    flex-direction: column;
+    margin: 10px;
+    background-color: var(--light);
+    color: var(--white);
+    overflow: hidden;
+    font-size: 1.4em;
+    transition: all 0.4s;
+    padding-bottom: 2em;
+}
+
+.gameCard:hover {
+    background-color: var(--white);
+    color: var(--darkest);
+}
+
+.gameCard h3 {
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.gamesContainer > div, .gameCard {
+    border-radius: 15px;
+}
+
+.landingContainer {
+    width:90%;
+    align-items: flex-start;
+}
+
+.gameImg {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+}
+
+.landingTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.landingTitleContainer h1 {
+    color: var(--darkest);
+    font-size: 4em;
+}
+
+.landingTitleContainer select {
+    background-color: var(--darkest);
+    border-radius: 10px;
+    color: var(--white);
+    padding: 0.4em 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.4s;
+}
+
+.landingTitleContainer select:hover {
+    background-color: var(--white);
+    color: var(--darkest);
+}
+
+.landingContainer >div:first-of-type {
+    width: 55%;
+}
+
+.landingContainer > div:nth-of-type(2) {
+    width: 30%;
+    align-content: flex-start;
+    text-align: center;
+    margin-top: 20em;
+}
+
+.mainInfo h2 {
+    font-size: 3em;
+    color: var(--darkest);
+}
+
+.mainInfo p {
+    color: var(--black);
+    margin-top: 2em;
+    font-size: 1.7em;
+}
+
+.hater {
+    font-size: 2.5em;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+@media only screen and (max-width: 1600px) {
+    .mainInfo p {
+        font-size: 1.5em;
+        line-height: 1.7em;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .gamesContainer > div a {
+        width: 45%;
+    }
+
+    .gamesContainer > div {
+        justify-content: center;
+    }
+
+    .landingContainer >div:first-of-type {
+        width: 90%;
+    }
+    
+    .landingContainer > div:nth-of-type(2) {
+        width: 90%;
+        align-content: flex-start;
+        text-align: center;
+        margin: 10em 0em;
+    }
+
+    .landingContainer {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+}
+
+/* Profile */
+
+.profileSection {
+    width: 80%;
+    margin-top:10vh
+}
+
+.profileData {
+    width: 50%;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    border-left: 1px solid var(--black);
+    padding-left: 5%;
+    min-height: 70vh;
+}
+
+.profileData form {
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.profileDataButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profileDataButton button {
+    display: inline;
+}
+
+.profileData form > div:last-of-type {
+    width: 60%;
+}
+
+.profileData h1 {
+    text-align: start;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.profileMenu {
+    width: 30%;
+    flex-flow: column;
+}
+
+.menuListItem {
+    text-decoration: none;
+    padding: 3em 1em;
+    border: 0px solid var(--black);
+    border-width: 1px 0px 1px 1px;
+}
+
+.menuListItem:last-of-type {
+    border-width: 0px 0px 1px 1px;
+}
+
+.menuListSelected {
+    background-color: var(--darker);
+    color: var(--white)
+}
+
+.formImgContainer img {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    object-fit: cover;
+    border:2px solid var(--darkest)
+}
+
+.formImgContainer {
+    width: 30%;
+    flex-direction: column;
+}
+
+.formImgContainer svg {
+    font-size: 1em;
+    width: 30px;
+    cursor: pointer;
+    border: 2px solid var(--darkest);
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--darkest)
+}
+
+.formImgContainer svg:hover {
+    background-color: var(--darker);
+    color: var(--white);
+    border-color: var(--lightest);
+}
+
+.profileDataButton span {
+    margin-right: 10%;
+    margin-top: 25px;
+}
+
+.profileOptions button {
+    width: 100%;
+}
+
+.profileOptions > div {
+    width: 100%
+}
+
+.profileOptions span {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.delete {
+    background-color: rgb(222, 39, 39);
+    border-color: var(--white);
+}
+
+.delete:hover {
+    background-color: var(--white);
+    color: var(--red);
+    border-color: var(--red);
+}
+
+.reset {
+    background-color: var(--aqua);
+    border-color: var(--white);
+}
+
+.reset:hover {
+    background-color: var(--white);
+    color: var(--aqua);
+    border-color: var(--aqua);
+}
+
+.signout {
+    background-color: rgb(49, 49, 49);
+}
+
+.signout:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--black);
+}
+
+.profileOptions button {
+    border: 2px solid
+}
+
+@media only screen and (max-width: 1600px) {
+    .profileSection {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .formImgContainer {
+        width: 100%;
+    }
+
+    .profileData form > div:last-of-type {
+        width: 100%;
+    }
+}
+
+
+
+/* Form general styles */
+
+form input {
+    width: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid var(--lightest)
+}
+
+.inputBox {
+    margin: 10px 0px;
+}
+
+form div label {
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+form button, .profileOptions button {
+    margin-top: 10px;
+    padding:1em 2em;
+    color: var(--white);
+    transition: all 0.4s;
+    
+}
+
+form button {
+    background-color: var(--darker);
+    border: 2px solid var(--darker);
+}
+
+form button:not([disabled], .logService button):hover {
+    background-color: var(--white);
+    color: var(--darker);
+    border-color:var(--darker)
+}
+
+/* Game Page */
+
+.like-active {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.like-inactive {
+    color: var(--lightest);
+    background-color: lightgray;
+}
+
+.like {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    font-size: 2.5em;
+}
+
+.like-inactive:hover {
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.like-active:hover {
+    color: var(--darkest);
+}
+
+.likeContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.gameSection {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    width: 80%;
+    margin-top: 5%;
+}
+
+.game-lb-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-like-container {
+    width: 70%;
+    min-height: 70vh;
+    flex-direction: column;
+}
+
+.gameContainer {
+    display: flex;
+    min-height: 70vh;
+    background-color: var(--black);
+    align-items: stretch;
+    overflow: hidden;
+    padding: 5em 0em;
+}
+
+.lbContainer {
+    width: 25%;
+    flex-direction: column;
+}
+
+.lbContainer td:first-child {
+    padding: 0.5em 1em;
+}
+
+.lbContainer td:nth-child(2){
+    padding: 0.5em 2em;
+}
+
+.lbContainer td:last-child{
+    padding: 0.5em 4em;
+}
+
+.lbContainer td:first-child:not(thead td){
+    background-color: rgb(227, 227, 227);
+}
+
+.lbContainer td:last-child:not(thead td){
+    background-color: var(--lightest);
+}
+
+.lbContainer td {
+    font-size: 1.5em;
+}
+
+.lbContainer thead {
+    background-color: var(--darkest);
+    color: var(--white);
+}
+
+.lbContainer tbody tr {
+    border: 1px solid var(--black);
+    border-top: none;
+}
+
+.lbContainer thead {
+    border: 1px solid var(--black);
+}
+
+.lbContainer h2 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.lbContainer > div {
+    flex-flow: column wrap;
+}
+
+@media only screen and (max-width: 1920px) {
+    
+}
+
+@media only screen and (max-width: 1300px) {
+    .game-like-container {
+        width: 100%;
+    }
+    .game-lb-container{
+        flex-flow: column wrap;
+        margin-bottom: 10em;
+    }
+    .lbContainer {
+        width: 100%;
+        margin-top: 5em;
+    }
+}
+
+
+/* About */
+
+.about {
+    width: 60%;
+    display: flex;
+    margin-top: 5%;
+    min-height: 90%;
+}
+
+.aboutImgContainer {
+    border-right: 1px solid var(--darkest);
+    padding-right: 50px;
+}
+
+.about img {
+    object-fit: cover;
+    border: 2px solid var(--darkest);
+}
+
+.aboutInfo {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.aboutInfo h1 {
+    color: var(--darkest);
+    font-size: 3em;
+}
+
+.about p {
+    font-size: 1.5em;
+    line-height: 1.6em;
+    margin-top: 1em;
+}
+
+@media only screen and (max-width: 1920px) {
+    .about {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .about img {
+        width: 15em;
+        height: 15em;
+    }
+
+    .aboutInfo {
+        width: 100%;
+    }
+
+    .about {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .aboutImgContainer {
+        display: none;
+    }
+}
+
+/* Log Services */
+
+.LoginImg, .SignUpImg {
+    height: 100vh;
+    width: 60%;
+    background-size: cover;
+    color: var(--white);
+    font-family: 'inter';
+    font-weight: bold;
+    font-size: 6em;
+}
+
+.logServiceForm {
+    width: 40%;
+    height: 100vh;
+}
+
+.LoginImg {
+    background: linear-gradient(to top, #3204fdba, #12e0b4cc), url('../public/img/login.jpg') no-repeat top center;
+}
+
+.SignUpImg {
+    background: linear-gradient(to top, #3204fdba, #12e0b4cc), url('../public/img/signup.jpg') no-repeat;
+}
+
+.logService {
+    width: 100%;
+}
+
+
+.logServiceForm > div {
+    width: 60%;
+}
+
+.logService button {
+    background-color: var(--aqua);
+    border-color: var(--aqua);
+    margin-bottom: 20px;
+}
+
+.logService button:hover {
+    border-color: var(--aqua);
+    color: var(--aqua);
+    background-color: whitesmoke;
+}
+
+.logService-title {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.logService-title span{
+    margin-top: 0.7em;
+}
+
+.logService-title span a {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 1000px) {
+    .logServiceForm {
+        width: 100%;
+    }
+
+    .LoginImg, .SignUpImg {
+        width: 0%;
+    }
+}
+
+/* Games general classes*/
+
+.Game-title {
+    color: var(--aqua);
+    font-size: 5em;
+    margin-bottom: 1em;
+}
+
+/* TicTacToe */
+
+.TTT-section {
+    flex-direction: column;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+.TTTButton {
+    color: transparent;
+    width: 33%;
+    height: 3em;
+    padding: 0em 20px;
+    border: 2px solid var(--white);
+    background-color: transparent;
+    font-size: 4em;
+    box-sizing: border-box;
+}
+
+.TTTButton:hover {
+    background-color: rgba(209, 209, 209, 0.3);
+}
+
+.TTT-O {
+    color: var(--aqua);
+}
+
+.TTT-X {
+    color: orange;
+}
+
+
+.TTT-reset {
+    margin-top: 1em;
+    background: none;
+    border: 2px solid var(--aqua);
+    padding: 1em 2em;
+    font-size: 2em;
+    color: var(--white);
+}
+
+.TTT-reset:hover, .SCLK-reset:hover {
+    background-color: var(--light);
+    color: var(--darkest);
+    border-color: var(--white);
+}
+
+.TTT-score {
+    margin-top: 1em;
+    font-size: 2em;
+    color: var(--white);
+    text-align: center;
+}
+
+@media only screen and (max-width: 1920px) {
+    .TTTButton {
+        height: 2.5em;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .TTTButton {
+        height: 3em;
+    }
+}
+
+ /* Super Clicker */
+
+ .SCLK-container {
+    flex-flow: column wrap;
+    width: 100%;
+ }
+
+ .SCLK-container > div {
+    display: flex;
+    width: 90%;
+    margin: 5em 0em;
+ }
+
+ .SCLK-circle {
+    padding: 3em;
+    color: white;
+    border: 5px solid var(--aqua);
+    background-color: gold;
+    font-size: 1.5em;
+ }
+
+ .SCLK-btnContainer {
+    width: 30em;
+    height: 30em;
+    justify-content: center;
+    padding-right: 20px;
+    border-right: 2px solid var(--aqua);
+ }
+
+ .SCLK-circle-end {
+    background-color: var(--red);
+    border-color: gold;
+ }
+
+ .SCLK-score {
+    font-size: 2em;
+    color: var(--lightest);
+    justify-content: flex-start;
+ }
+
+ .SCLK-scoreEnd {
+    color: rgb(13, 170, 79);
+ }
+
+ .SCLK-reset {
+    margin-top: 1em;
+    font-size: 2em;
+    color: var(--white);
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid var(--aqua);
+    padding: 1em 2em;
+    width: 50%;
+ }
+
+ .SCLK-innerCircle {
+    background-color: var(--red);
+    width: 40%;
+    height: 40%;
+ }
