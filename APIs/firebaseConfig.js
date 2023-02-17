@@ -5,11 +5,11 @@ import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_CVP_FIREBASE_KEY,
-  authDomain: "community-gaming-platform.firebaseapp.com",
-  projectId: "community-gaming-platform",
-  storageBucket: "community-gaming-platform.appspot.com",
-  messagingSenderId: "461256009569",
-  appId: "1:461256009569:web:606fa60ddbd01fbc33c720"
+  authDomain: process.env.NEXT_PUBLIC_CVP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_CVP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_CVP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_CVP_FIREBASE_MESSAGING_ID,
+  appId: process.env.NEXT_PUBLIC_CVP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
