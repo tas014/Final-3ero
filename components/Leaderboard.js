@@ -53,7 +53,7 @@ export default function Leaderboard() {
                             <tr key={user.username}>
                                 <td>{i+1}</td>
                                 <td>{user.username}</td>
-                                <td>{user.score}</td>
+                                <td>{Math.ceil(user.score)}</td>
                             </tr>
                         )})}
                 </tbody>
